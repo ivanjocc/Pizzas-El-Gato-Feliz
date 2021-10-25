@@ -1,0 +1,575 @@
+/*-------------------------------------*/
+/*Variables*/
+/*-------------------------------------*/
+
+/*Colores*/
+@negro-custom: #141618;
+@blanco: #fff;
+@texto-oscuro: #303133;
+@texto-claro: #777;
+@dorado: #b4975a;
+@gris-claro: #eaeaea;
+
+/*Fuentes*/
+@fuente-principal: 'Playfair Display', serif;
+@fuente-secundaria: 'Poppins', serif;
+
+
+/*-------------------------------------*/
+/*Generales*/
+/*-------------------------------------*/
+
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body{
+	font-size: 16px;
+	font-family: @fuente-principal;
+	color: @texto-oscuro;
+}
+
+a{
+	text-decoration: none;
+	color: @texto-oscuro;
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+
+	&:hover{
+		color: fade(@texto-oscuro, 50%);
+	}
+}
+
+/*-------------------------------------*/
+/*Encabezado*/
+/*-------------------------------------*/
+
+header{
+	.contenedor{
+		background: @blanco;
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	
+	.logo{
+		width: 100%;
+		text-align: center;
+		margin: auto;
+		padding: auto;
+
+	}
+	.menu-principal{
+		width: 100%;
+		text-align: center;
+		justify-content: space-between;
+
+		a{
+			margin: 1rem;
+		}
+	}
+}
+
+/*-------------------------------------*/
+/*Bienvenida*/
+/*-------------------------------------*/
+
+.portada-bienvenida{
+	width: 100%;
+	height: 350px;
+	background-image: url(../img/portada.jpg);
+	background-size: cover;
+	display: flex;
+	margin-top: 1rem;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+
+	.bienvenida{
+		width: 300px;
+		height: 100px;
+		background-color: fade(@negro-custom, 50%);
+
+		h1{
+			font-size: 2.5rem;
+			position: relative;
+			top: 25%;
+			color: @blanco;
+
+		}
+	}
+}
+
+/*-------------------------------------*/
+/*Sobre Nosotros*/
+/*-------------------------------------*/
+
+.contenedor-nosotros{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 5rem 0;
+	
+
+	.col-izq{
+		width: 30%;
+		padding-left: 1rem;
+		display: flex;
+		border-right: 1px solid @dorado;
+		align-items: center;
+		font-size: 2rem;
+		font-style: italic;
+		color: @negro-custom;
+		font-family: @fuente-principal;
+	}
+
+	.col-der{
+		width: 70%;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		font-size: 1rem;
+		font-family: @fuente-secundaria;
+		line-height: 2rem;
+		text-align: justify;
+		color: @texto-oscuro;
+	}
+}
+
+/*-------------------------------------*/
+/*Nuestros Productos*/
+/*-------------------------------------*/
+
+.contenedor-productos{
+	background: @negro-custom;
+	height: 450px;
+	overflow: hidden;
+
+	.slider{
+		height: 400px;
+		width: 300%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		padding-left: 5%;
+		padding-top: 5%;
+
+		.slide{
+			background-size: contain;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+
+			&.foto1{
+				width: 100%;
+				background-image: url('../img/pizza1.jpg');
+			}
+
+			&.foto2{
+				width: 100%;
+				background-image: url('../img/pizza2.jpg');
+			}
+
+			&.foto3{
+				width: 100%;
+				background-image: url('../img/pizza3.jpg');
+			}
+		}
+	}
+}
+
+/*-------------------------------------*/
+/*Contacto*/
+/*-------------------------------------*/
+
+.contenedor-contacto{
+	width: 100%;
+	height: 400px;
+	background-size: contain;
+	background-image: url('../img/formulario.jpg');
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	text-align: center;
+
+	>div{
+		width: 20%;
+		height: 100px;
+		margin: 10rem 2rem;
+		background-color: fade(@gris-claro, 80%);
+		border: 5px double @dorado;
+		color: @negro-custom;
+		align-items: center;
+
+		h3{
+			text-align: center;
+			border-bottom: 1px solid @dorado;
+			font-style: italic;
+		}
+
+		p{
+			font-size: 1.25rem;
+		}
+	}
+}
+
+/*-------------------------------------*/
+/*Escríbenos*/
+/*-------------------------------------*/
+
+.contenedor-formulario{
+	margin: 0 auto;
+	width: 500px;
+	text-align: left;
+	margin-top: 50px;
+
+	.input-group{
+		margin-bottom: 2rem;
+
+		input[type="text"],
+		input[type="email"],
+		textarea{
+			font-family: @fuente-secundaria;
+			font-size: 1rem;
+			color: @texto-oscuro;
+			width: 100%;
+			outline: none;
+			padding: 0.9375rem 0;
+			background: none;
+			border: none;
+			border-bottom: 2px solid fade(@dorado, 50%);
+			vertical-align: top;
+
+			&:focus{
+				border-bottom: 2px solid @dorado;
+			}
+		}
+
+		textarea{
+			max-width: 100%;
+			max-height: 10rem;
+			min-height: 5rem;
+			min-width: 100%;
+		}
+	}
+
+	input[type="submit"]{
+		font-family: @fuente-secundaria;
+		background: @dorado;
+		color: @blanco;
+		border-radius: 1px;
+		border: 2px solid @blanco;
+		cursor: pointer;
+		display: block;
+		margin: 0 auto;
+		margin-top: 3.125rem;
+		padding: 0.9375rem;
+		width: 20%;
+		outline: none;
+		-webkit-transition: all .3s ease;
+		-o-transition: all .3s ease;
+		transition: all .3s ease;
+
+		&:hover{
+			opacity: 80%;
+		}
+	}
+}
+
+/*-------------------------------------*/
+/*Pie de página*/
+/*-------------------------------------*/
+
+.pie-pagina{
+	width: 100%;
+	height: 250px;
+	background: @negro-custom;
+	margin-top: 30px;
+	text-align: center;
+	justify-content: center;
+	vertical-align: middle;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	color: @blanco;
+
+	.redes-sociales{
+		padding-top: 1.5rem;
+
+		a{
+			color: @blanco;
+			padding: 0 1rem;
+		}
+	}
+}
+
+/*-------------------------------------*/
+/*Media Queries*/
+/*-------------------------------------*/
+
+@media all and (max-width: 950px){
+	.contenedor-contacto{
+		.horario{
+			h3{
+				font-size: 1rem;
+				height: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			p{
+				font-size: 0.8rem;
+				height: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
+
+}
+@media all and (max-width: 800px){
+	.contenedor-contacto{
+		.direccion{
+			font-size: 0.75rem;
+
+			h3{
+				height: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			p{
+				font-size: 1rem;
+				height: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+
+		.telefono{
+			font-size: 0.75rem;
+
+			h3{
+				height: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			p{
+				font-size: 1rem;
+				height: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+
+		.horario{
+			font-size: 0.75rem;
+
+			h3{
+				height: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			p{
+				font-size: 0.8rem;
+				height: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
+}
+
+@media all and (max-width: 580px) and (min-width: 400px){
+
+	.contenedor-nosotros{
+		margin-top: -2rem;
+
+		.col-izq{
+			width: 100%;
+			border: none;
+			border-bottom: 1px solid @dorado;
+			padding-bottom: 1rem;
+			margin-top: ;
+		}
+
+		.col-der{
+			width: 100%;
+			padding-top: 1rem;
+			margin-bottom: -2rem;
+		}
+	}
+
+	.contenedor-productos{
+		padding: 0 1rem;
+		margin-bottom: -1rem;
+	}
+
+	.contenedor-contacto{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: center;
+
+		.direccion{
+			width: 70%;
+			margin: auto;
+
+			h3{
+				font-size: 1.5rem;
+			}
+
+			p{
+				font-size: 1.5rem;
+			}
+		}
+
+		.telefono{
+			width: 70%;
+			margin: auto;
+
+			h3{
+				font-size: 1.5rem;
+			}
+
+			p{
+				font-size: 1.5rem;
+			}
+		}
+
+		.horario{
+			width: 70%;
+			margin: auto;
+			
+			h3{
+				font-size: 1.5rem;
+			}
+
+			p{
+				font-size: 1rem;
+			}
+		}
+	}
+
+	.contenedor-formulario{
+		max-width: 350px;
+		margin: 1rem 0rem 0rem 1rem;
+
+		input[type=submit]{
+		width: 200px;
+		}
+	}
+
+	.pie-pagina{
+		height: 200px;
+	}
+}
+
+@media all and (max-width: 700px){
+	.contenedor-nosotros{
+		margin-top: -2rem;
+
+		.col-izq{
+			width: 100%;
+			border: none;
+			border-bottom: 1px solid @dorado;
+			padding-bottom: 1rem;
+			margin-top: -2rem;
+
+			h2{
+				margin: auto;
+			}
+		}
+
+		.col-der{
+			width: 100%;
+			padding-top: 1rem;
+			margin-bottom: -2rem;
+		}
+	}
+}
+
+@media all and (max-width: 400px){
+	.contenedor-nosotros{
+		.col-izq{
+			h2{
+				font-size: 2rem;
+			}
+		}
+	}
+
+	.contenedor-contacto{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: center;
+
+		.direccion{
+			width: 70%;
+			margin: auto;
+
+			h3{
+				font-size: 1.3rem;
+			}
+
+			p{
+				font-size: 1.2rem;
+			}
+		}
+
+		.telefono{
+			width: 70%;
+			margin: auto;
+
+			h3{
+				font-size: 1.5rem;
+			}
+
+			p{
+				font-size: 1.5rem;
+			}
+		}
+
+		.horario{
+			width: 70%;
+			margin: auto;
+			
+			h3{
+				font-size: 1.2rem;
+			}
+
+			p{
+				font-size: 1rem;
+			}
+		}
+	}
+
+	.contenedor-formulario{
+		max-width: 250px;
+		margin: 1rem 0rem 0rem 1rem;
+
+		input[type=submit]{
+		width: 200px;
+		}
+	}
+
+	.pie-pagina{
+		height: 200px;
+	}
+}
